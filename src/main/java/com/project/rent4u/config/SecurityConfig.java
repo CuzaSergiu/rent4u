@@ -1,4 +1,4 @@
-package com.project.rent4u.controller;
+package com.project.rent4u.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
