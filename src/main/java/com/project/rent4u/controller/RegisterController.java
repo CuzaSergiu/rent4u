@@ -15,16 +15,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Slf4j
 public class RegisterController {
 
-    private UserDtoValidator userDtoValidator;
-    private UserService userService;
+    // == fields ==
+    private final UserDtoValidator userDtoValidator;
+    private final UserService userService;
 
+    // == constructor ==
     @Autowired
     public RegisterController(UserDtoValidator userDtoValidator, UserService userService) {
         this.userDtoValidator = userDtoValidator;
         this.userService = userService;
     }
 
-
+    // == methods ==
     @GetMapping("/register")
     public String getRegisterPage(Model model){
         log.info("getRegisterPage called");
