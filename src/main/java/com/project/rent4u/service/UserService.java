@@ -14,12 +14,14 @@ public class UserService {
     private final UserMapper userMapper;
     private final UserRepository userRepository;
 
+    // == constructor ==
     @Autowired
     public UserService(UserMapper userMapper, UserRepository userRepository) {
         this.userMapper = userMapper;
         this.userRepository = userRepository;
     }
 
+    // == public methods ==
     public void register(UserDto userDto){
         User user = userMapper.mapToEntity(userDto);
         userRepository.save(user);
