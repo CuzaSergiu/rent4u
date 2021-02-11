@@ -18,15 +18,17 @@ public class UserDtoValidator {
     //== fields ==
     private final UserRepository userRepository;
 
+    // == constructor ==
     @Autowired
     public UserDtoValidator(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
-    public void validate(UserDto userDto, BindingResult bindingResult){
+    // == methods ==
+    public void validate(UserDto userDto, BindingResult bindingResult) {
         Optional<User> optionalUser = userRepository.findByEmail(userDto.getEmail());
-        if (optionalUser.isPresent()){
-            bindingResult.addError(new FieldError("userDto","email","This email is already in use"));
+        if (optionalUser.isPresent()) {
+            bindingResult.addError(new FieldError("userDto", "email", "This email is already in use"));
         }
     }
 }

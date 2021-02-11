@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @Component
 public class UserMapper {
 
-    public User mapToEntity(UserDto userDto){
+    public User mapToEntity(UserDto userDto) {
         User user = new User();
         user.setFirstName(userDto.getFirstName());
         user.setLastName(userDto.getLastName());

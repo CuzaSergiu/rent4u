@@ -26,14 +26,14 @@ public class RegisterController {
 
 
     @GetMapping("/register")
-    public String getRegisterPage(Model model){
+    public String getRegisterPage(Model model) {
         log.info("getRegisterPage called");
-        model.addAttribute("userDto",new UserDto());
+        model.addAttribute("userDto", new UserDto());
         return "register";
     }
 
     @PostMapping
-    public String postRegisterPage(Model model, UserDto userDto, BindingResult bindingResult){
+    public String postRegisterPage(Model model, UserDto userDto, BindingResult bindingResult) {
         log.info("postRegisterPage called");
         userDtoValidator.validate(userDto,bindingResult);
         if (bindingResult.hasErrors()){
