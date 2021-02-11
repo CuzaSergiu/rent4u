@@ -2,10 +2,7 @@ package com.project.rent4u.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Data
@@ -22,6 +19,10 @@ public class User {
     private String email;
     private String password;
     private Boolean isAdmin;
+
+    // == relationships ==
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Role role;
 
 
 }
