@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Slf4j
 public class RegisterController {
 
-
     @GetMapping("/register")
     public String getRegisterPage(Model model) {
         log.info("getRegisterPage called");
