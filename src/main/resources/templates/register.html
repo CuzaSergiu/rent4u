@@ -14,6 +14,7 @@
     <form th:action="@{/register}" method="post" th:object="${userDto}">
         <!-- 2 column grid layout with text inputs for the first and last names and date of birth -->
         <div class="row mb-4">
+
             <!--First name input-->
             <div class="col">
                 <div class="form-outline">
@@ -21,6 +22,7 @@
                     <label class="form-label" for="form3Example1">First name</label>
                 </div>
             </div>
+
             <!--Last name input-->
             <div class="col">
                 <div class="form-outline">
@@ -29,6 +31,7 @@
                 </div>
             </div>
         </div>
+
         <!--Date of birth input-->
         <div class="col">
             <div class="form-outline">
@@ -36,6 +39,7 @@
                 <label class="form-label" for="form3Example2">Date of birth</label>
             </div>
         </div>
+
         <!-- Email input -->
         <div class="form-outline mb-4">
             <input type="email" id="form3Example3" class="form-control" th:field="*{email}"/>
@@ -50,6 +54,7 @@
                th:each="error: ${#fields.errors('email')}"
                th:text="${error}"></p>
         </div>
+
         <div class="form-outline mb-4">
             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" th:value="false"
                    th:field="*{isAdmin}" checked>
@@ -57,6 +62,7 @@
                 User
             </label>
         </div>
+
         <div class="form-outline mb-4">
             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" th:value="true"
                    th:field="*{isAdmin}">
