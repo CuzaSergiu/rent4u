@@ -34,7 +34,7 @@ public class RegisterController {
         return "register";
     }
 
-    @PostMapping
+    @PostMapping("/register")
     public String postRegisterPage(Model model, UserDto userDto, BindingResult bindingResult){
         log.info("postRegisterPage called");
         userDtoValidator.validate(userDto,bindingResult);
@@ -44,7 +44,7 @@ public class RegisterController {
             return "register";
         }
         userService.register(userDto);
-        return "redirect:/register";
+        return "redirect:/home";
     }
 
 

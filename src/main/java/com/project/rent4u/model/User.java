@@ -18,7 +18,6 @@ public class User {
     private LocalDate dateOfBirth;
     private String email;
     private String password;
-    private Boolean isAdmin;
 
     // == relationships ==
     @ManyToOne(cascade = CascadeType.ALL)
